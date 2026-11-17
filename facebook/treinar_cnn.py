@@ -78,7 +78,7 @@ class CNNArtigo(nn.Module):
     para outros tamanhos, o número de entradas da camada final é
     calculado automaticamente."""
 
-    def __init__(self, tamanho=256, canais=3):
+    def __init__(self, tamanho=512, canais=3):
         super().__init__()
 
         def bloco(c_in, c_out, k):
@@ -125,7 +125,7 @@ def resumo(nome, linhas):
 def main():
     a = argparse.ArgumentParser()
     a.add_argument("--index", default="index.csv")
-    a.add_argument("--tamanho", type=int, default=256)
+    a.add_argument("--tamanho", type=int, default=512)
     a.add_argument("--qualidade", type=int, default=95, help="qualidade JPEG do ELA")
     a.add_argument("--ela", choices=["sim", "nao"], default="sim",
                    help="usar mapas ELA como entrada do modelo (padrão: sim)")
